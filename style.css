@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101010;
+  padding: 100px 0;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  margin: 50px 0;
+}
+
+.timeline ul {
+  list-style-type: none;
+}
+
+.timeline ul li {
+  padding: 20px;
+  border-radius: 10px;
+  background: #1e1f22;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content h1 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.timeline-content .date {
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background: gray;
+  }
+
+  .timeline ul li {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0 20px 20px 20px;
+  }
+  .timeline ul li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: gray;
+    border-radius: 50%;
+  }
+  .timeline ul li:nth-child(odd)::after {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::after {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline ul li:hover:after {
+    background: #ff503f;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -25px;
+  }
+}
